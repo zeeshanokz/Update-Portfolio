@@ -5,13 +5,21 @@ import { motion } from "framer-motion";
 import { Briefcase, MapPin } from "lucide-react";
 import { experiences } from "@/data";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { slideInLeft, slideInRight, defaultTransition } from "@/lib/animations";
+import {
+  fadeInUp,
+  slideInLeft,
+  slideInRight,
+  defaultTransition,
+} from "@/lib/animations";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 function ExperienceComponent() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <section
       id="experience"
-      className="bg-muted/20 py-24 sm:py-32"
+      className="bg-muted/20 py-16 sm:py-24 lg:py-32"
       aria-labelledby="experience-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -30,13 +38,18 @@ function ExperienceComponent() {
           <div className="space-y-12">
             {experiences.map((exp, index) => {
               const isEven = index % 2 === 0;
+              const variants = isDesktop
+                ? isEven
+                  ? slideInLeft
+                  : slideInRight
+                : fadeInUp;
               return (
                 <motion.article
                   key={exp.id}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-80px" }}
-                  variants={isEven ? slideInLeft : slideInRight}
+                  variants={variants}
                   transition={{ ...defaultTransition, delay: index * 0.1 }}
                   className={`relative md:grid md:grid-cols-2 md:gap-12 ${
                     isEven ? "" : "md:direction-rtl"

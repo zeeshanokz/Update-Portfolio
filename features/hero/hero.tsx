@@ -40,13 +40,13 @@ function HeroComponent() {
         <div className="absolute top-1/2 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_340px] lg:gap-16 xl:grid-cols-[1fr_380px]">
+      <div className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1fr_340px] lg:gap-16 xl:grid-cols-[1fr_380px]">
           <ProfileImage
             priority
-            className="order-first lg:order-last"
+            className="order-first max-w-[240px] xs:max-w-[280px] sm:max-w-[320px] lg:order-last lg:max-w-[360px]"
           />
-          <div className="order-last max-w-3xl lg:order-first">
+          <div className="order-last w-full max-w-3xl lg:order-first">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -75,7 +75,7 @@ function HeroComponent() {
             animate="visible"
             variants={fadeInUp}
             transition={{ ...defaultTransition, delay: 0.3 }}
-            className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl"
+            className="mt-2 text-3xl font-bold tracking-tight xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
           >
             <span className="gradient-text">{SITE_CONFIG.name}</span>
           </motion.h1>
@@ -95,10 +95,10 @@ function HeroComponent() {
             animate="visible"
             variants={fadeInUp}
             transition={{ ...defaultTransition, delay: 0.5 }}
-            className="mt-6 flex min-h-[2rem] items-center text-lg sm:text-xl"
+            className="mt-6 flex min-h-[2rem] flex-wrap items-center text-lg sm:text-xl"
           >
-            <span className="text-muted-foreground">I build </span>
-            <span className="ml-1 font-semibold text-primary">
+            <span className="text-muted-foreground">I build&nbsp;</span>
+            <span className="font-semibold text-primary break-words">
               {typedText}
               <span className="animate-pulse">|</span>
             </span>
