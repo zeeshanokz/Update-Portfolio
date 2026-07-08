@@ -64,7 +64,7 @@ function ProfileImageComponent({
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.4 }}
-            className="glass absolute -bottom-4 -left-4 flex items-center gap-2 rounded-2xl px-4 py-2.5 shadow-lg"
+            className="glass absolute -bottom-3 -left-2 flex items-center gap-2 rounded-2xl px-3 py-2 shadow-lg sm:-bottom-4 sm:-left-4 sm:px-4 sm:py-2.5"
           >
             <Sparkles className="size-4 text-primary" aria-hidden="true" />
             <div className="leading-tight">

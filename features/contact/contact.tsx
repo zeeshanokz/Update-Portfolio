@@ -62,7 +62,7 @@ function ContactComponent({ onSuccess, onError }: ContactProps) {
   return (
     <section
       id="contact"
-      className="bg-muted/20 py-24 sm:py-32"
+      className="bg-muted/20 py-16 sm:py-24 lg:py-32"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -72,7 +72,7 @@ function ContactComponent({ onSuccess, onError }: ContactProps) {
           description="Have a project in mind or want to discuss opportunities? I'd love to hear from you."
         />
 
-        <div className="grid gap-12 lg:grid-cols-5">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-5 lg:gap-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -95,7 +95,7 @@ function ContactComponent({ onSuccess, onError }: ContactProps) {
                 <p className="text-sm text-muted-foreground">Email</p>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="focus-ring font-medium text-primary"
+                  className="focus-ring font-medium text-primary break-all"
                 >
                   {SITE_CONFIG.email}
                 </a>
