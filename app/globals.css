@@ -17,6 +17,7 @@
   --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --breakpoint-xs: 30rem;
 }
 
 :root {
@@ -55,13 +56,29 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offset anchor scrolling so section headings aren't hidden behind the fixed navbar */
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent any transform/animation from causing sideways drift on mobile */
+  overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6.5rem;
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+img,
+video {
+  max-width: 100%;
 }
 
 ::selection {
