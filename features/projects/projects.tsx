@@ -162,7 +162,7 @@ function ProjectsComponent() {
   return (
     <section
       id="projects"
-      className="py-24 sm:py-32"
+      className="py-16 sm:py-24 lg:py-32"
       aria-labelledby="projects-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

@@ -18,7 +18,7 @@ function ServicesComponent() {
   return (
     <section
       id="services"
-      className="py-24 sm:py-32"
+      className="py-16 sm:py-24 lg:py-32"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
